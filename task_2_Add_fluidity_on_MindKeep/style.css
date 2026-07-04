@@ -1,0 +1,570 @@
+/* ===== BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background: #f5f7fa;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* ===== LAYOUT - FLUID CONTAINER ===== */
+.container {
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== HEADER - FLUID TYPOGRAPHY ===== */
+header {
+  background: #1a1a2e;
+  color: white;
+  padding: 30px 0;
+  margin-bottom: 30px;
+  border-bottom: 4px solid #4a9eff;
+}
+
+header h1 {
+  /* FLUID TYPOGRAPHY with clamp() */
+  font-size: clamp(24px, 5vw, 36px);
+  margin-bottom: 5px;
+}
+
+header p {
+  color: #a8b2d1;
+  /* FLUID TYPOGRAPHY */
+  font-size: clamp(12px, 1.5vw, 16px);
+}
+
+/* ===== SECTIONS - FLUID SPACING ===== */
+section {
+  background: white;
+  padding: clamp(20px, 3vw, 30px);
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+h2 {
+  /* FLUID TYPOGRAPHY */
+  font-size: clamp(18px, 2.5vw, 24px);
+  margin-bottom: 20px;
+  color: #1a1a2e;
+  border-bottom: 2px solid #eef2f7;
+  padding-bottom: 10px;
+}
+
+/* ===== FORM - FULL WIDTH ===== */
+form p {
+  margin-bottom: 15px;
+}
+
+form label {
+  display: block;
+  font-weight: 500;
+  font-size: clamp(13px, 1.2vw, 15px);
+  margin-bottom: 4px;
+  color: #2d3748;
+}
+
+form input[type="text"],
+form input[type="datetime-local"],
+form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #d1d9e6;
+  border-radius: 6px;
+  font-size: clamp(14px, 1.2vw, 16px);
+  font-family: inherit;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 120px;
+  margin-top: 8px;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: 2px solid #4a9eff;
+  outline-offset: 1px;
+}
+
+form p:has(input[type="checkbox"]) {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+form input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+button[type="submit"] {
+  background: #4a9eff;
+  color: white;
+  border: none;
+  padding: clamp(10px, 1.5vw, 14px) clamp(20px, 3vw, 30px);
+  border-radius: 6px;
+  font-size: clamp(14px, 1.2vw, 17px);
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+}
+
+button[type="submit"]:hover {
+  background: #3182f6;
+}
+
+/* ===== ATTACHMENT TOOLBAR ===== */
+.attachment-toolbar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap; 
+}
+
+.attach-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: clamp(4px, 0.6vw, 8px) clamp(10px, 1.5vw, 16px);
+  background: #f0f4ff;
+  border: 1.5px solid #d1d9e6;
+  border-radius: 6px;
+  font-size: clamp(12px, 1vw, 14px);
+  font-weight: 500;
+  color: #2d3748;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.attach-btn:hover {
+  background: #4a9eff;
+  color: white;
+  border-color: #4a9eff;
+  transform: translateY(-1px);
+}
+
+.attach-btn span {
+  font-size: clamp(14px, 1.2vw, 18px);
+}
+
+.attachment-hint {
+  margin-top: 6px;
+  font-size: clamp(11px, 0.9vw, 13px);
+  color: #4A5568;
+  font-style: italic;
+}
+
+/* ===== TASKS - FLUID LAYOUT ===== */
+article {
+  background: #fafbfc;
+  padding: clamp(14px, 1.5vw, 20px) clamp(16px, 2vw, 24px);
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border-left: 4px solid #4a9eff;
+}
+
+article:last-child {
+  margin-bottom: 0;
+}
+
+article h3 {
+  /* FLUID TYPOGRAPHY */
+  font-size: clamp(16px, 1.8vw, 19px);
+  color: #1a1a2e;
+  margin-bottom: 5px;
+}
+
+article > p {
+  color: #4a5568;
+  font-size: clamp(13px, 1.1vw, 15px);
+  margin-bottom: 3px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+article time {
+  font-weight: 500;
+  color: #2d3748;
+}
+
+/* ===== CONTENT BLOCK - FLUID ===== */
+.content-block {
+  background: white;
+  padding: clamp(10px, 1.2vw, 16px) clamp(12px, 1.5vw, 18px);
+  margin: 8px 0 5px 0;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.content-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 6px 0;
+}
+
+.content-block ul li {
+  font-size: clamp(13px, 1vw, 15px);
+  padding: 3px 0;
+  color: #4a5568;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap; 
+  word-break: break-word;
+}
+
+.content-block ul li a {
+  color: #4a9eff;
+  text-decoration: none;
+  word-break: break-all; 
+}
+
+.content-block ul li a:hover {
+  text-decoration: underline;
+}
+
+.content-block .note {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px dashed #e2e8f0;
+  color: #4a5568;
+  font-size: clamp(12px, 0.9vw, 14px);
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+/* Icon styles in content */
+.icon-link { color: #4a9eff; }
+.icon-doc { color: #e53e3e; }
+.icon-image { color: #38a169; }
+.icon-note { color: #d69e2e; }
+
+/* ===== TASK ACTIONS - FLUID ===== */
+.task-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #e2e8f0;
+  background: #fafbfc;
+  flex-wrap: wrap; 
+  gap: 8px;
+}
+
+.status {
+  font-size: clamp(13px, 1vw, 15px);
+  color: #718096;
+  padding: 4px 12px;
+  border-radius: 4px;
+  background: #f0f4ff;
+}
+
+.status.pending {
+  color: #b48408;
+  background: #f8f7db;
+}
+
+.status.done {
+  color: #38a169;
+  background: #c6f6d5;
+}
+
+.done-btn {
+  background: transparent;
+  border: 1.5px solid #d1d9e6;
+  padding: clamp(4px, 0.5vw, 6px) clamp(12px, 1.5vw, 18px);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: clamp(12px, 0.9vw, 14px);
+  color: #2d3748;
+  transition: all 0.2s;
+  white-space: nowrap; 
+}
+
+.done-btn:hover {
+  background: #4a9eff;
+  color: white;
+  border-color: #4a9eff;
+}
+
+/* ===== PAGE FOOTER - FLUID ===== */
+footer {
+  background: #1a1a2e;
+  color: #a8b2d1;
+  padding: clamp(16px, 2vw, 24px) 0;
+  margin-top: 30px;
+  text-align: center;
+  font-size: clamp(12px, 1vw, 15px);
+}
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+
+/* ===== TABLET (768px - 1023px) ===== */
+@media (max-width: 1023px) {
+  .container {
+    max-width: 700px;
+    padding: 0 24px;
+  }
+
+  section {
+    padding: clamp(18px, 2.5vw, 25px);
+  }
+
+  .content-block ul li {
+    word-break: break-word;
+  }
+
+  .content-block ul li a {
+    word-break: break-all;
+  }
+}
+
+/* ===== MOBILE (480px - 767px) ===== */
+@media (max-width: 767px) {
+  .container {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+
+  header {
+    padding: 20px 0;
+    margin-bottom: 20px;
+  }
+
+  header h1 {
+    font-size: clamp(20px, 4.5vw, 28px);
+  }
+
+  section {
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+  }
+
+  h2 {
+    font-size: clamp(16px, 3vw, 20px);
+    margin-bottom: 14px;
+  }
+
+  form input[type="text"],
+  form input[type="datetime-local"],
+  form textarea {
+    font-size: 16px; 
+    padding: 10px 12px;
+  }
+
+  form textarea {
+    min-height: 100px;
+  }
+
+  .attachment-toolbar {
+    gap: 6px;
+  }
+
+  .attach-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+    flex: 1 1 auto; 
+    justify-content: center;
+  }
+
+  article {
+    padding: 14px 16px;
+    border-left-width: 3px;
+  }
+
+  article h3 {
+    font-size: clamp(15px, 2.5vw, 17px);
+  }
+
+  .content-block {
+    padding: 10px 12px;
+  }
+
+  .content-block ul li {
+    font-size: 13px;
+    padding: 2px 0;
+  }
+
+  .content-block .note {
+    font-size: 12px;
+  }
+
+  .task-actions {
+    flex-direction: column; 
+    align-items: stretch;
+    gap: 6px;
+  }
+
+  .status {
+    text-align: center;
+    font-size: 13px;
+    padding: 4px 10px;
+  }
+
+  .done-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+    width: 100%; 
+    text-align: center;
+  }
+
+  footer {
+    padding: 16px 0;
+    font-size: 12px;
+  }
+
+  /* Improve touch targets for mobile */
+  .attach-btn,
+  .done-btn,
+  button[type="submit"] {
+    min-height: 44px;
+  }
+}
+
+/* ===== SMALL MOBILE (below 480px) ===== */
+@media (max-width: 479px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  header {
+    padding: 16px 0;
+    margin-bottom: 16px;
+  }
+
+  header h1 {
+    font-size: clamp(18px, 4vw, 22px);
+  }
+
+  header p {
+    font-size: 12px;
+  }
+
+  section {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+
+  h2 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+  }
+
+  form p {
+    margin-bottom: 12px;
+  }
+
+  form label {
+    font-size: 13px;
+  }
+
+  form input[type="text"],
+  form input[type="datetime-local"],
+  form textarea {
+    font-size: 15px;
+    padding: 8px 10px;
+  }
+
+  form textarea {
+    min-height: 80px;
+  }
+
+  .attachment-toolbar {
+    gap: 4px;
+  }
+
+  .attach-btn {
+    font-size: 11px;
+    padding: 4px 8px;
+    flex: 1 1 40%; 
+    justify-content: center;
+    min-height: 38px;
+  }
+
+  .attach-btn span {
+    font-size: 14px;
+  }
+
+  .attachment-hint {
+    font-size: 11px;
+  }
+
+  article {
+    padding: 12px;
+    margin-bottom: 10px;
+  }
+
+  article h3 {
+    font-size: 15px;
+  }
+
+  article > p {
+    font-size: 12px;
+  }
+
+  .content-block {
+    padding: 8px 10px;
+  }
+
+  .content-block ul li {
+    font-size: 12px;
+  }
+
+  .content-block .note {
+    font-size: 11px;
+  }
+
+  .status {
+    font-size: 12px;
+    padding: 3px 8px;
+  }
+
+  .done-btn {
+    font-size: 12px;
+    padding: 5px 10px;
+    min-height: 38px;
+  }
+
+  footer {
+    padding: 12px 0;
+    font-size: 11px;
+  }
+}
+
+/* ===== LARGE SCREENS (1024px+) ===== */
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 820px;
+    padding: 0 30px;
+  }
+
+  section {
+    padding: 32px;
+  }
+
+  /* keep desktop as is, but ensure fluidity */
+  .content-block ul li a {
+    word-break: break-word;
+  }
+}
