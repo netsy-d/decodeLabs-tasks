@@ -1,0 +1,298 @@
+/* ===== BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background: #f5f7fa;
+  width: 820px;
+  margin: 0 auto;
+}
+
+/* ===== LAYOUT ===== */
+.container {
+  width: 740px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: #1a1a2e;
+  color: white;
+  padding: 30px 0;
+  margin-bottom: 30px;
+  border-bottom: 4px solid #4a9eff;
+}
+
+header h1 {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+header p {
+  color: #a8b2d1;
+  font-size: 14px;
+}
+
+/* ===== SECTIONS ===== */
+section {
+  background: white;
+  padding: 30px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #1a1a2e;
+  border-bottom: 2px solid #eef2f7;
+  padding-bottom: 10px;
+}
+
+/* ===== FORM ===== */
+form p {
+  margin-bottom: 15px;
+}
+
+form label {
+  display: block;
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: #2d3748;
+}
+
+form input[type="text"],
+form input[type="datetime-local"],
+form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #d1d9e6;
+  border-radius: 6px;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 120px;
+  margin-top: 8px;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: 2px solid #4a9eff;
+  outline-offset: 1px;
+}
+
+form p:has(input[type="checkbox"]) {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+form input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+button[type="submit"] {
+  background: #4a9eff;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+}
+
+button[type="submit"]:hover {
+  background: #3182f6;
+}
+
+/* ===== ATTACHMENT TOOLBAR ===== */
+.attachment-toolbar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.attach-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 14px;
+  background: #f0f4ff;
+  border: 1.5px solid #d1d9e6;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #2d3748;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.attach-btn:hover {
+  background: #4a9eff;
+  color: white;
+  border-color: #4a9eff;
+  transform: translateY(-1px);
+}
+
+.attach-btn span {
+  font-size: 16px;
+}
+
+.attachment-hint {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #4A5568;
+  font-style: italic;
+}
+
+/* ===== TASKS ===== */
+article {
+  background: #fafbfc;
+  padding: 18px 20px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border-left: 4px solid #4a9eff;
+}
+
+article:last-child {
+  margin-bottom: 0;
+}
+
+article h3 {
+  font-size: 17px;
+  color: #1a1a2e;
+  margin-bottom: 5px;
+}
+
+article > p {
+  color: #4a5568;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+article time {
+  font-weight: 500;
+  color: #2d3748;
+}
+
+/* ===== CONTENT BLOCK ===== */
+.content-block {
+  background: white;
+  padding: 12px 15px;
+  margin: 8px 0 5px 0;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.content-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 6px 0;
+}
+
+.content-block ul li {
+  font-size: 14px;
+  padding: 3px 0;
+  color: #4a5568;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.content-block ul li a {
+  color: #4a9eff;
+  text-decoration: none;
+}
+
+.content-block ul li a:hover {
+  text-decoration: underline;
+}
+
+.content-block .note {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px dashed #e2e8f0;
+  color: #4a5568;
+  font-size: 13px;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+/* Icon styles in content */
+.icon-link { color: #4a9eff; }
+.icon-doc { color: #e53e3e; }
+.icon-image { color: #38a169; }
+.icon-note { color: #d69e2e; }
+
+/* ===== TASK ACTIONS ===== */
+.task-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #e2e8f0;
+  background: #fafbfc;
+}
+
+.status {
+  font-size: 14px;
+  color: #718096;
+  padding: 4px 12px;
+  border-radius: 4px;
+  background: #f0f4ff;
+}
+
+.status.pending {
+  color: #b48408;
+  background: #f8f7db;
+}
+
+.status.done {
+  color: #38a169;
+  background: #c6f6d5;
+}
+
+.done-btn {
+  background: transparent;
+  border: 1.5px solid #d1d9e6;
+  padding: 5px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #2d3748;
+  transition: all 0.2s;
+}
+
+.done-btn:hover {
+  background: #4a9eff;
+  color: white;
+  border-color: #4a9eff;
+}
+
+/* ===== PAGE FOOTER ===== */
+footer {
+  background: #1a1a2e;
+  color: #a8b2d1;
+  padding: 20px 0;
+  margin-top: 30px;
+  text-align: center;
+  font-size: 14px;
+}

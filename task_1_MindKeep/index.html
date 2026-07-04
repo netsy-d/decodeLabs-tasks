@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindKeep</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>📋 MindKeep</h1>
+      <p>Write what you want me to remind you about·</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- ===== ADD TODO ===== -->
+      <section>
+        <h2>✏️ add new task</h2>
+        <form>
+          <!-- Task title -->
+          <p>
+            <label for="task">what to do?</label>
+            <input type="text" id="task" placeholder="e.g. review project doc" required>
+          </p>
+
+          <!-- Content with attachment buttons -->
+          <p>
+            <label>📎 attachments</label>
+            <div class="attachment-toolbar">
+              <button type="button" class="attach-btn" data-type="link" title="Insert link">
+                <span aria-hidden="true">🔗</span> Link
+              </button>
+              <button type="button" class="attach-btn" data-type="doc" title="Insert document">
+                <span aria-hidden="true">📄</span> Doc
+              </button>
+              <button type="button" class="attach-btn" data-type="image" title="Insert image">
+                <span aria-hidden="true">🖼️</span> Image
+              </button>
+              <button type="button" class="attach-btn" data-type="note" title="Insert note">
+                <span aria-hidden="true">📝</span> Note
+              </button>
+            </div>
+            <textarea id="content" rows="4" placeholder="Paste or type your content here..."></textarea>
+            <div class="attachment-hint">
+              <span>💡 Click an icon above to insert a template, or paste directly</span>
+            </div>
+
+          <!-- Time -->
+          <p>
+            <label for="time">⏰ remind me at</label>
+            <input type="datetime-local" id="time" value="2026-07-04T10:00">
+          </p>
+
+          <p>
+            <input type="checkbox" id="remind" checked>
+            <label for="remind">🔔 remind 10 minutes before</label>
+          </p>
+
+          <p>
+            <button type="submit">➕ add task</button>
+          </p>
+        </form>
+      </section>
+
+      <!-- ===== TODO LIST Display===== -->
+      <section>
+        <h2>📌 your tasks</h2>
+        <p><strong>3 tasks</strong></p>
+
+        <article>
+          <h3>review design mockup</h3>
+          <p>
+            <time datetime="2026-07-04T10:30">⏰ today 10:30 AM</time>
+          </p>
+          <div class="content-block">
+            <ul>
+              <li><span class="icon-link">🔗</span> <a href="#">figma.com/design/project-v2</a></li>
+              <li><span class="icon-doc">📄</span> <a href="#">style-guide.pdf</a></li>
+              <li><span class="icon-image">🖼️</span> <a href="#">homepage-mockup.png</a></li>
+            </ul>
+            <p class="note"><span class="icon-note">📝</span> Check the color palette and typography</p>
+          </div>
+          <div class="task-actions">
+            <span class="status pending">⏳ pending</span>
+            <button class="done-btn">✔ done</button>
+          </div>
+        </article>
+
+        
+        <article>
+          <h3>prepare weekly report</h3>
+          <p>
+            <time datetime="2026-07-04T14:00">⏰ today 2:00 PM</time>
+          </p>
+          <div class="content-block">
+            <ul>
+              <li><span class="icon-doc">📄</span> <a href="#">weekly-metrics.xlsx</a></li>
+              <li><span class="icon-link">🔗</span> <a href="#">drive.google.com/reports</a></li>
+            </ul>
+            <p class="note"><span class="icon-note">📝</span> Include last week's performance data and highlight any anomalies</p>
+          </div>
+          <div class="task-actions">
+            <span class="status pending">⏳ pending</span>
+            <button class="done-btn">✔ done</button>
+          </div>
+        </article>
+
+        <article>
+          <h3>call client about feedback</h3>
+          <p>
+            <time datetime="2026-07-05T09:00">⏰ tomorrow 9:00 AM</time>
+          </p>
+          <div class="content-block">
+            <ul>
+              <li><span class="icon-image">🖼️</span> <a href="#">feedback-screenshot.png</a></li>
+              <li><span class="icon-doc">📄</span> <a href="#">client-notes.docx</a></li>
+            </ul>
+            <p class="note"><span class="icon-note">📝</span> Discuss UI changes, have updated mockups ready. Call +91 89330 06408</p>
+          </div>
+          <div class="task-actions">
+            <span class="status pending">⏳ pending</span>
+            <button class="done-btn">✔ done</button>
+          </div>
+        </article>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ===== PAGE FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 MindKeep. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
