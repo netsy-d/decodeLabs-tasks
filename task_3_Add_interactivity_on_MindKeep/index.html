@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindKeep</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="container header-flex">
+      <div class="brand">
+        <h1>📋 MindKeep</h1>
+        <p>Write what you want me to remind you about</p>
+      </div>
+      <!-- Dark Mode Toggle -->
+      <button class="theme-toggle js-theme-toggle" aria-label="Toggle dark mode">
+        <span class="theme-toggle__icon" aria-hidden="true">🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- ===== ADD TODO ===== -->
+      <section id="add-task">
+        <h2>✏️ add new task</h2>
+        <form id="taskForm" class="js-task-form">
+          <!-- Task title -->
+          <p>
+            <label for="taskInput">what to do?</label>
+            <input type="text" id="taskInput" class="js-task-input" placeholder="e.g. review project doc" required>
+          </p>
+
+          <!-- Content with attachment buttons -->
+          <p>
+            <label>📎 attachments</label>
+            <div class="attachment-toolbar">
+              <button type="button" class="attach-btn js-attach-btn" data-type="doc" title="Insert document">
+                <span aria-hidden="true">📄</span> Doc
+              </button>
+              <button type="button" class="attach-btn js-attach-btn" data-type="image" title="Insert image">
+                <span aria-hidden="true">🖼️</span> Image
+              </button>
+            </div>
+            <textarea id="contentInput" class="js-content-input" rows="4" placeholder="Paste or type your content here..."></textarea>
+            <div class="attachment-hint">
+              <span>💡 Click an icon above to insert a template, or paste directly</span>
+            </div>
+          </p>
+
+          <!-- Time -->
+          <p>
+            <label for="timeInput">⏰ remind me at</label>
+            <input type="datetime-local" id="timeInput" class="js-time-input">
+          </p>
+
+          <p>
+            <input type="checkbox" id="remindCheck" class="js-remind-check" checked>
+            <label for="remindCheck">🔔 remind 10 minutes before</label>
+          </p>
+
+          <p>
+            <button type="submit" class="js-submit-btn">➕ add task</button>
+          </p>
+        </form>
+      </section>
+
+      <!-- ===== TODO LIST ===== -->
+      <section id="your-tasks">
+        <div class="list-header">
+          <h2>📌 your tasks</h2>
+          <span class="task-counter js-task-counter">0 tasks</span>
+        </div>
+
+        <div id="taskList" class="js-task-list">
+          <!-- Tasks will be rendered here by JavaScript -->
+        </div>
+
+        <!-- Empty state (hidden by default) -->
+        <div class="empty-state js-empty-state is-hidden">
+          <p>🎉 No tasks yet! Add one above.</p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ===== PAGE FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 MindKeep. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script src="script.js"></script>
+
+</body>
+</html>
