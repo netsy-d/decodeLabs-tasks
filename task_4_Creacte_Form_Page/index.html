@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create your account</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Background decorative elements -->
+<div class="blob blob-1" aria-hidden="true"></div>
+<div class="blob blob-2" aria-hidden="true"></div>
+
+<main class="wrap">
+  <header class="brand">
+    <div class="brand-mark" aria-hidden="true"></div>
+    <span>MindKeep</span>
+  </header>
+
+  <section class="card" aria-label="Authentication">
+    <h1 id="formTitle">Create your account</h1>
+    <p class="sub" id="formSubtitle">Start your free workspace in under a minute.</p>
+
+    <div class="banner" id="errorBanner" role="alert"></div>
+    <div class="banner-success" id="successBanner" role="alert"></div>
+
+    <form id="signupForm" novalidate aria-label="Authentication form">
+
+      <!-- Sign Up Fields -->
+      <fieldset id="signupFields">
+        <legend class="sr-only">Sign up information</legend>
+        
+        <div class="field">
+          <label for="fullName">Full name</label>
+          <div class="input-wrap">
+            <input type="text" id="fullName" name="fullName" placeholder="Jordan Rivera" autocomplete="name"
+                   aria-describedby="fullName-error" aria-invalid="false">
+            <span class="status-icon" id="fullName-icon" aria-hidden="true">✓</span>
+          </div>
+          <p class="error-msg" id="fullName-error" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label for="email">Email address</label>
+          <div class="input-wrap">
+            <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email"
+                   aria-describedby="email-error" aria-invalid="false">
+            <span class="status-icon" id="email-icon" aria-hidden="true">✓</span>
+          </div>
+          <p class="error-msg" id="email-error" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <div class="input-wrap">
+            <input type="password" id="password" name="password" placeholder="Create a password" autocomplete="new-password"
+                   aria-describedby="password-error password-hint" aria-invalid="false">
+            <button type="button" class="toggle-pw" data-target="password" aria-label="Show password">Show</button>
+            <span class="status-icon" id="password-icon" aria-hidden="true">✓</span>
+          </div>
+          <div class="strength" id="strengthMeter" aria-hidden="true" role="img" aria-label="Password strength meter">
+            <div class="strength-seg s1"></div>
+            <div class="strength-seg s2"></div>
+            <div class="strength-seg s3"></div>
+            <div class="strength-seg s4"></div>
+          </div>
+          <p class="strength-label" id="strengthLabel">8+ characters, upper &amp; lower case, a number, and a symbol</p>
+          <p class="error-msg" id="password-error" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label for="confirmPassword">Confirm password</label>
+          <div class="input-wrap">
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" autocomplete="new-password"
+                   aria-describedby="confirmPassword-error" aria-invalid="false">
+            <button type="button" class="toggle-pw" data-target="confirmPassword" aria-label="Show password">Show</button>
+            <span class="status-icon" id="confirmPassword-icon" aria-hidden="true">✓</span>
+          </div>
+          <p class="error-msg" id="confirmPassword-error" role="alert"></p>
+        </div>
+
+        <div class="checkbox-row">
+          <input type="checkbox" id="terms" name="terms" aria-describedby="terms-error">
+          <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</label>
+        </div>
+        <p class="error-msg" id="terms-error" role="alert" style="margin-top:0;"></p>
+      </fieldset>
+
+      <!-- Login Fields -->
+      <fieldset id="loginFields" style="display: none;">
+        <legend class="sr-only">Login information</legend>
+        
+        <div class="field">
+          <label for="loginEmail">Email address</label>
+          <div class="input-wrap">
+            <input type="email" id="loginEmail" name="loginEmail" placeholder="you@example.com" autocomplete="email"
+                   aria-describedby="loginEmail-error" aria-invalid="false">
+            <span class="status-icon" id="loginEmail-icon" aria-hidden="true">✓</span>
+          </div>
+          <p class="error-msg" id="loginEmail-error" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label for="loginPassword">Password</label>
+          <div class="input-wrap">
+            <input type="password" id="loginPassword" name="loginPassword" placeholder="Enter your password" autocomplete="current-password"
+                   aria-describedby="loginPassword-error" aria-invalid="false">
+            <button type="button" class="toggle-pw" data-target="loginPassword" aria-label="Show password">Show</button>
+            <span class="status-icon" id="loginPassword-icon" aria-hidden="true">✓</span>
+          </div>
+          <p class="error-msg" id="loginPassword-error" role="alert"></p>
+        </div>
+
+        <div class="checkbox-row">
+          <input type="checkbox" id="rememberMe" name="rememberMe">
+          <label for="rememberMe">Remember me</label>
+        </div>
+      </fieldset>
+
+      <button type="submit" id="submitBtn">Create account</button>
+
+      <footer class="footnote" id="footnote">
+        <span id="footnoteText">Already have an account? </span>
+        <button type="button" id="toggleModeBtn" class="mode-toggle-btn">Log in</button>
+      </footer>
+
+      <p class="sr-only" id="live-region" aria-live="polite"></p>
+    </form>
+
+    <section class="success-panel" id="successPanel" aria-label="Success message">
+      <div class="success-check" aria-hidden="true">✓</div>
+      <h2 id="successTitle">You're all set</h2>
+      <p id="successDescription">Your account request cleared every check. Here's the payload that would be sent to the server:</p>
+      <pre id="payloadOutput" aria-label="Payload data"></pre>
+      <button type="button" id="resetBtn">Create another account</button>
+    </section>
+  </section>
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
